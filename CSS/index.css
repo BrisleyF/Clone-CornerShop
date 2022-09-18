@@ -97,8 +97,13 @@
     padding: 2rem 0;
 }
 
+.apps .content .fondo-apps li {
+    list-style-type: none;
+}
+
 .apps .content .fondo-apps h2 {
     font-size: 2.25em;
+    margin-bottom: 1rem;
 }
 
 .how-it-works {
@@ -167,8 +172,8 @@
     background: #00de52;
 }
 
-.how-it-works .content .fruit {
-    background-image: url(/Imagenes/Fruit_2x.jpg);
+.how-it-works .content footer {
+    
 }
 
 .links .content {
@@ -269,7 +274,12 @@ footer .footer-content .footer-column .apps {
     justify-content: center;
 }
 
-footer .footer-content .copyright-phrase p {
-    font-size: 0.8em;
+footer .copyright-phrase {
+    background-color: #2b2b2b;
     color: #dcdcdf;
+    padding: 2rem;
+}
+
+footer.copyright-phrase p {
+    font-size: 0.8em;
 }
