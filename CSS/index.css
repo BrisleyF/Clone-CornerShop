@@ -1,0 +1,275 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-navbar{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Helvetica, Arial, sans-serif;
+    color: #545454;
+    letter-spacing: 0.01em;
+    font-size: 1rem;
+    height: 3.65rem;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 16px rgb(0 0 0 / 10%);
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #4A4A4A;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 1.5rem;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.introduction .content {
+    padding: 0 2rem;
+}
+
+.introduction .content header {
+    padding-bottom: 2rem;
+}
+
+.introduction .content img {
+    display: block;
+    margin: auto;
+}
+
+.introduction .content h1 {
+    color: #ff0026;
+    font-family: "Avenir Next Condensed", "Avenir Next", Avenir, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.introduction .content .see-stores {
+    height: 48px;
+    width: 145px;
+    margin: auto;
+    border: 2px solid #f50024;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 20px;
+    box-shadow: 0px 4px 6px rgb(0 0 0 / 15%);
+    cursor: pointer;
+    color: white;
+    background: #ff0026;
+    font-weight: 600;
+    text-align: center;
+}
+
+.introduction .content .see-stores a {
+    text-decoration: none;
+    color: white;
+}
+
+.introduction .content .log-in {
+    text-align: center;
+}
+
+.introduction .content .log-in span {
+    display: inline-block;
+    font-weight: 500;
+    color: #888B90;
+    padding: 8px;
+}
+
+.introduction .content .log-in a {
+    font-weight: 600;
+    color: #888B90;
+}
+
+.apps .content .fondo-apps {
+    background-color: rgba(220, 220, 223, 0.8);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.apps .content .fondo-apps h2 {
+    font-size: 2.25em;
+}
+
+.how-it-works {
+    padding: 2rem 0;
+}
+
+.how-it-works .content {
+    padding: 0 2rem;
+}
+
+.how-it-works .content header {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.how-it-works .content h2, p {
+    font-family: "Avenir Next", Avenir, sans-serif;
+}
+
+.how-it-works .content li h2 {
+    margin-bottom: 1rem;
+    color: #2b2b2b;
+}
+
+.how-it-works .content header h2 {
+    font-size: 2.25em;
+}
+
+.how-it-works .content li {
+    list-style-type: none;
+    padding: 1rem;
+    text-align: center;
+}
+
+.how-it-works .content p {
+    font-size: 18px;
+    color: #2b2b2b;
+}
+
+.how-it-works .content figure {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    width: 84px;
+    height: 84px;
+    line-height: 84px;
+    font-size: 42px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+}
+
+.how-it-works .content li:nth-child(1) figure {
+    border: 2px solid #ff000e;
+    background: #ff0a17;
+}
+
+.how-it-works .content li:nth-child(2) figure {
+    border: 2px solid #f58900;
+    background: #ff8f00;
+}
+
+.how-it-works .content li:nth-child(3) figure {
+    border: 2px solid #00d44e;
+    background: #00de52;
+}
+
+.how-it-works .content .fruit {
+    background-image: url(/Imagenes/Fruit_2x.jpg);
+}
+
+.links .content {
+    padding: 1rem 2rem;
+    background-color: rgba(220, 220, 223, 0.8);
+}
+
+.links .content .stories li {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    list-style-type: none;
+}
+
+.links .content .stories a, span {
+    color: black;
+    text-decoration: none;
+}
+
+.links .content .stories a header {
+    background: linear-gradient(rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 0) 100%);
+    padding: 2rem 1px;
+    border-radius: 11px;
+    color: black;
+    text-shadow: 0px 2px 4px rgb(255 255 255 / 50%);
+    text-align: center;
+}
+
+.links .content .stories .for-shopper {
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/Imagenes/Bags_2x-compressed.jpg);
+    border-radius: 12px;
+    height: 400px;
+}
+
+.links .content .stories .for-stores {
+    background-size: cover;
+    background-position: center center;
+    background-image: url(/Imagenes/Storefront_2x.jpg);
+    border-radius: 12px;
+    height: 400px;
+}
+
+.links .content .stories-single li {
+    background-color:#2b2b2b;
+    border-radius: 12px;
+    list-style-type: none;
+}
+
+.links .content .stories-single li header {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.links .content .stories-single a {
+    color: white;
+    text-decoration: none;
+}
+
+.links .content .stories-single span {
+    color: #888B90;
+}
+
+.links .content .stories-single header h2 {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+footer .footer-content {
+    background-color: #2b2b2b;
+    padding: 1rem 0;
+    color: white;
+    letter-spacing: 0.01em;
+}
+
+footer .footer-content img {
+    display: block;
+    margin: auto;
+}
+
+footer .footer-content nav {
+    padding: 1rem 1.5rem;
+}
+
+footer .footer-content nav li {
+    list-style-type: none;
+    padding: 0.4rem 0;
+}
+
+footer .footer-content nav li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .footer-content .footer-column .apps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer .footer-content .copyright-phrase p {
+    font-size: 0.8em;
+    color: #dcdcdf;
+}
