@@ -1,0 +1,65 @@
+@media (min-width: 600px) {
+    .introduction .content h1 {
+        font-size: 4.3em;
+    }
+    
+    .apps .content .fondo-apps {
+        height: 240px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .apps .content .fondo-apps ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .how-it-works .content .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #frutas {
+        width: 100%;
+    }
+
+    .links .content {
+        padding: 3rem 5.25rem;
+    }
+
+    .links .content .stories {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .links .content li {
+        margin: 2rem;
+    }
+
+    footer .footer-content {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    footer .footer-content .footer-column #logo-footer {
+        margin-top: 1rem ;
+    }
+}
+
+@media (max-width: 600px) {
+    #frutas {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .apps .content .fondo-apps ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .links .content {
+        padding: 3rem 2.25rem;
+    }
+}
