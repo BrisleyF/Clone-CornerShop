@@ -5,7 +5,23 @@
     }
 }
 
+@media (max-width: 900px) {
+    .apps .content .fondo-apps ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .links .content {
+        padding: 3rem 2.25rem;
+    }
+}
+
 @media (min-width: 600px) {
+
+    .main-navbar {
+        justify-content: center;
+    }
+
     .introduction .content h1 {
         font-size: 4.3em;
     }
@@ -60,13 +76,3 @@
     }
 }
 
-@media (max-width: 900px) {
-    .apps .content .fondo-apps ul {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .links .content {
-        padding: 3rem 2.25rem;
-    }
-}
