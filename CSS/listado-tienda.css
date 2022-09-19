@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.navigation-bar {
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 1rem; 
+    margin-top: 0.5rem;
+}
+
+.navigation-bar button  {
+    background: transparent;
+    border: none;
+    color: rgb(224, 45, 45);
+    padding: 0rem;
+    font-size: 1.2em;
+}
+
+.navigation-bar .title {
+    color: white;
+    font-size: 1em;
+}
+
+.large-title {
+    color: white;
+    display: none;
+}
+
+.header {
+    position: sticky;
+    top: 35px;
+    z-index: 10;
+}
+
+.searchbar {
+    margin: 0.5rem;
+}
+
+.searchbar .search-container {
+    display: flex;
+    padding: 0.5rem 0.8rem;
+    background-color: rgb(58, 58, 58);
+    border-radius: 12px;
+}
+
+.searchbar .search-container label i {
+    color: grey;
+    font-size: 1em;
+}
+.searchbar .search-container .search-input {
+    padding-left: 1rem;
+}
+
+.searchbar .search-container input {
+    background: transparent;
+    border: none;
+    font-size: 1em;
+}
+
+.cart-address {
+    color: white;
+}
+
+.cart-address .button-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(58, 58, 58);
+    border: none;
+    color: gray;
+    font-size: 1em;
+}
+
+.cart-address .button-flex .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.stores-container .stores-row-container h2 {
+    color: white;
+}
+
+main {
+    padding: 1rem 1rem 6.25rem;
+}
+
+main .divider {
+    border: 1px solid rgb(88, 88, 88);
+}
