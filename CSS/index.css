@@ -248,6 +248,10 @@ footer .footer-content {
     letter-spacing: 0.01em;
 }
 
+#logo-footer {
+    filter: invert();
+}
+
 footer .footer-content img {
     display: block;
     margin: auto;

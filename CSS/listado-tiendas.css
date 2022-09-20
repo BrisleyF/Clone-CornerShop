@@ -8,6 +8,10 @@ body {
     background-color: #000;
 }
 
+.container-header {
+    background-color: #1c1c1e;
+}
+
 .navigation-bar {
     position: sticky;
     top: 0;
@@ -42,62 +46,83 @@ body {
     position: sticky;
     top: 35px;
     z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 
-.searchbar {
+.header .searchbar {
     margin: 0.5rem;
 }
 
-.searchbar .search-container {
+.header .searchbar .search-container {
     display: flex;
     padding: 0.5rem 0.8rem;
     background-color: rgb(58, 58, 58);
     border-radius: 12px;
 }
 
-.searchbar .search-container label i {
+.header .searchbar .search-container label i {
     color: grey;
     font-size: 1em;
 }
-.searchbar .search-container .search-input {
+.header .searchbar .search-container .search-input {
     padding-left: 1rem;
 }
 
-.searchbar .search-container input {
+.header .searchbar .search-container input {
     background: transparent;
     border: none;
     font-size: 1em;
 }
 
-.cart-address {
+.header .cart-address {
     color: white;
+    width: 60%;
 }
 
-.cart-address .button-flex {
+.header .cart-address .button-flex {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     padding: 1rem;
-    background-color: rgb(58, 58, 58);
+    background-color: #1c1c1e;
     border: none;
     color: gray;
     font-size: 1em;
 }
 
-.cart-address .button-flex .text {
+.header .cart-address .button-flex .text {
     display: flex;
     flex-direction: column;
 }
 
-.stores-container .stores-row-container h2 {
-    color: white;
-}
-
-main {
+.stores-container {
     padding: 1rem 1rem 6.25rem;
 }
 
-main .divider {
+.stores-container .stores-row-container {
+    padding: 1rem 0;
+}
+
+.stores-container .stores-row-container h2, h4, p {
+    color: white;
+}
+
+.stores-container .divider {
     border: 1px solid rgb(88, 88, 88);
+}
+
+.stores-container .stares-collections .stores-row-container .slider-scroll {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 12px;
+}
+
+.stores-container .stares-collections .stores-row-container .slider-scroll .slider {
+    margin: 0 auto;
+}
+
+.stores-container .stares-collections .stores-row-container .slider-scroll .slider img {
+    border-radius: 12px;
 }
