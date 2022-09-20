@@ -7,45 +7,49 @@
     <title>Tiendas | Cornershop</title>
     <link rel="stylesheet" href="/CSS/listado-tiendas.css">
     <link rel="stylesheet" href="/CSS/listado-tiendas-mediaqueries.css">
+    <link rel="stylesheet" href="/CSS/tarjetas.css">
     
 </head>
 <body>
     <div class="cont-principal">
         <div id="app-container">
-            <nav class="navigation-bar">
-                <div class="leading">
-                    <button class="account-button">Cuenta</button>
-                </div>
-                <h1 class="title">Tiendas</h1>
-                <div class="trailing">
-                    <button class="cart-button">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
-                </div>
-            </nav>
-            <span class="large-title">Tiendas</span>
-            <header class="header">
-                <div class="searchbar">
-                    <div class="search-container">
-                        <label for="search-field" class="search-icon">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </label>
-                        <div class="search-input">
-                            <input id="search-field" name="search-field" class="search-field" type="search" placeholder="Buscar tiendas y productos" autocomplete="off" spellcheck="false" tabindex="-1" value="">
+            <div class="container-header">
+                <nav class="navigation-bar">
+                    <div class="leading">
+                        <button class="account-button">Cuenta</button>
+                    </div>
+                    <h1 class="title">Tiendas</h1>
+                    <div class="trailing">
+                        <button class="cart-button">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </nav>
+                <span class="large-title">Tiendas</span>
+                <header class="header">
+                    <div class="cart-address">
+                        <button class="button-flex">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="text">
+                                <span>Cercana a</span>
+                                <span class="list-address">Santa Fe, Bogotá, CO</span>
+                            </div>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </div>
+                    <div class="searchbar">
+                        <div class="search-container">
+                            <label for="search-field" class="search-icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </label>
+                            <div class="search-input">
+                                <input id="search-field" name="search-field" class="search-field" type="search" placeholder="Buscar tiendas y productos" autocomplete="off" spellcheck="false" tabindex="-1" value="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="cart-address">
-                    <button class="button-flex">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="text">
-                            <span>Cercana a</span>
-                            <span class="list-address">Santa Fe, Bogotá, CO</span>
-                        </div>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </button>
-                </div>
-            </header>
+                </header>
+            </div>
+
             <main class="stores-container">
                 <div class="stares-collections">
                     <!--Primera seccion-->
@@ -53,22 +57,88 @@
                         <section>
                             <div class="slider-scroll">
                                 <figure class="slider">
-                                    
+                                    <div class="stores-group">
+                                        <a href="">
+                                            <figure class="stores-classic-card" style="background-color: rgb(7, 147, 62);">
+                                                <div class="content">
+                                                    <div class="logo">
+                                                        <img src="https://s.cornershopapp.com/store-logo/light_img_file_logo_92ec419e-bc43-413d-a4e4-c0707565dda6.png?versionId=TrYFX.n71wxRD.OfqoV4wkyKxtFSc7h2" alt="Jumbo" loading="auto">
+                                                    </div>
+                                                    <div class="stores-label-container">
+                                                        <p class="store-label">En 90 minutos</p>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                        <a href="">
+                                            <figure class="stores-classic-card" style="background-color: rgb(240, 92, 36);">
+                                                <div class="content">
+                                                    <div class="logo">
+                                                        <img src="https://s.cornershopapp.com/store-logo/logo.png?versionId=iIhpgk1J6JR5NpwPOQfyUc1ajYWZeBfx" alt="Alkosto" loading="auto">
+                                                    </div>
+                                                    <div class="stores-label-container">
+                                                        <p class="store-label">En 90 minutos</p>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                    </div>
                                 </figure>
                                 <figure class="slider">
-
+                                    <div class="stores-group">
+                                        <a href="">
+                                            <figure class="stores-classic-card" style="background-color: rgb(255, 81, 0);">
+                                                <div class="content">
+                                                    <div class="logo">
+                                                        <img src="https://s.cornershopapp.com/store-logo/a6161008-c33.png?versionId=TQ_7SMJQOD1oC3_4H.rW.ZHkZISAD_b9" alt="Fithub" loading="auto">
+                                                    </div>
+                                                    <div class="stores-label-container">
+                                                        <p class="store-label">En 90 minutos</p>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                        <a href="">
+                                            <figure class="stores-classic-card" style="background-color: rgb(248, 3, 3);">
+                                                <div class="content">
+                                                    <div class="logo">
+                                                        <img src="https://s.cornershopapp.com/store-logo/light_img_file_logo_b42d553d-6bf4-49ae-b9a9-549dfde6318e.png?versionId=pOqoNxTcYL0fuqntPaSp5uGM7eNNDT4z" alt="Makro" loading="auto">
+                                                    </div>
+                                                    <div class="stores-label-container">
+                                                        <p class="store-label">En 90 minutos</p>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                    </div>
                                 </figure>
                                 <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-
+                                    <div class="stores-group">
+                                        <a href="">
+                                            <figure class="stores-classic-card" style="background-color: rgb(7, 147, 62);">
+                                                <div class="content">
+                                                    <div class="logo mg">
+                                                        <img src="https://s.cornershopapp.com/store-logo/bbcc2dfe-d748-4915-ac2f-3ed962550f26-1164.png?versionId=e2SC8Dg8uwlmgtL6UU7Fpdl1k1XpCRLV" alt="Locatel" loading="auto">
+                                                    </div>
+                                                    <div class="stores-label-container">
+                                                        <p class="store-label">En 90 minutos</p>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                        <a href="">
+                                            <figure class="stores-classic-card" style="background-color: rgb(4, 52, 100);">
+                                                <div class="content">
+                                                    <div class="logo mg">
+                                                        <img src="https://s.cornershopapp.com/store-logo/00725ac8-8f95-43f1-b6e7-19f28550dfc8-1163.png?versionId=WXMDiYV0Dd7UiNHixA7VSOJlYEhOCl4O" alt="Farmatodo" loading="auto">
+                                                    </div>
+                                                    <div class="stores-label-container">
+                                                        <p class="store-label">En 90 minutos</p>
+                                                    </div>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                    </div>
                                 </figure>
                             </div>
                         </section>
@@ -82,13 +152,33 @@
                         <section>
                             <div class="slider-scroll">
                                 <figure class="slider">
-                                    
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://images.rappi.com.ar/marketplace/store_type_1638212925712.png?d=200x200&amp;e=webp" width="70" height="70" alt="">
+                                            <div>
+                                                <h4>SPID</h4>
+                                                <p>Express y conveniencia</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </figure>
                                 <figure class="slider">
-
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://apprecs.org/ios/images/app-icons/256/77/766541175.jpg" width="70" height="70" alt="">
+                                            <h4>Farmatodo</h4>
+                                            <p>Salud y cuidado personal</p>
+                                        </div>
+                                    </a>
                                 </figure>
                                 <figure class="slider">
-
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://images.rappi.com/marketplace/store_type_1631205584841.jpg?d=200x200&amp;e=webp" width="70" height="70" alt="">
+                                            <h4>Locatel</h4>
+                                            <p>Salud y bienestar</p>
+                                        </div>
+                                    </a>
                                 </figure>
                             </div>
                         </section>
@@ -102,317 +192,58 @@
                         <section>
                             <div class="slider-scroll">
                                 <figure class="slider">
-                                    
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://i.pinimg.com/originals/0d/69/3b/0d693be9b77e89892cfe1f0baefb42ea.jpg" width="70" height="70" alt="">
+                                            <h4>Macdonalds</h4>
+                                            <p>Comida rapida</p>
+                                        </div>
+                                    </a>
                                 </figure>
                                 <figure class="slider">
-
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://is3-ssl.mzstatic.com/image/thumb/Purple19/v4/08/5a/e6/085ae693-ee66-d146-b53c-79969fc15e6f/source/256x256bb.jpg" width="70" height="70" alt="">
+                                            <h4>Burgerking</h4>
+                                            <p>Comida rapida</p>
+                                        </div>
+                                    </a>
                                 </figure>
                                 <figure class="slider">
-
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://secretmenusource.com/wp-content/uploads/2014/09/kfc-secret-menu.png" width="70" height="70" alt="">
+                                            <h4>KFC</h4>
+                                            <p>Comida rapida</p>
+                                        </div>
+                                    </a>
                                 </figure>
                                 <figure class="slider">
-                                    
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://pbs.twimg.com/media/EDgANEPWwAU1nxT.jpg" width="70" height="70" alt="">
+                                            <h4>Arturo's</h4>
+                                            <p>Comida rapida</p>
+                                        </div>
+                                    </a>
                                 </figure>
                                 <figure class="slider">
-
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://cdn.iconscout.com/icon/free/png-256/taco-6-226371.png" width="70" height="70" alt="">
+                                            <h4>Taco Bell</h4>
+                                            <p>Comida rapida</p>
+                                        </div>
+                                    </a>
                                 </figure>
                                 <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion farmacia-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Farmacia</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion carniceria-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Carniceria</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion vida sana-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Vida sana</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion hogar y decoracion-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Hogar y decoracion</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion conveniencia-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Conveniencia</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion listos para cocinar-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Listos para cocinar</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion panaderia y reposteria-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Panaderia y reposteria</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion vinos y licores-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Vinos y licores</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion bienestar sexuel-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Bienestar sexual</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion joyeria y accesorios-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Joyeria y accesorios</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion belleza y cuidado personal-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Belleza y cuidado personal</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion gourmet-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Gourmet</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion supermercado-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Supermercado</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                            </div>
-                        </section>
-                    </section>
-                    <div class="divider"></div>
-                    <!--Seccion otras tiendas-->
-                    <section class="stores-row-container">
-                        <h2>
-                            <span>Otras tiendas</span>
-                        </h2>
-                        <section>
-                            <div class="slider-scroll">
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-                                    
-                                </figure>
-                                <figure class="slider">
-
-                                </figure>
-                                <figure class="slider">
-
+                                    <a href="">
+                                        <div>
+                                            <img class="img-fluid" src="https://images.rappi.com.ar/restaurants_logo/sushipop-1626716496472.png?e=webp&amp;q=40&amp;d=40x40" width="70" height="70" alt="">
+                                            <h4>Sushipop</h4>
+                                            <p>Comida rapida</p>
+                                        </div>
+                                    </a>
                                 </figure>
                             </div>
                         </section>
