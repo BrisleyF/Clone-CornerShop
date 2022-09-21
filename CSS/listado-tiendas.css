@@ -123,6 +123,10 @@ body {
     margin: 0 auto;
 }
 
+.stores-container .stares-collections .stores-row-container .slider-scroll .slider a {
+    text-decoration: none;
+}
+
 .stores-container .stares-collections .stores-row-container .slider-scroll .slider img {
     border-radius: 12px;
 }
