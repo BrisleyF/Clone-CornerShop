@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendas | Cornershop</title>
+    <link rel="icon" href="https://apprecs.org/ios/images/app-icons/256/a3/995060131.jpg">
+    <link rel="stylesheet" href="/CSS/listado-tiendas.css">
+    <link rel="stylesheet" href="/CSS/listado-tiendas-mediaqueries.css">
+    <link rel="stylesheet" href="/CSS/tarjetas.css">
+    
+</head>
+<body>
+    <div class="cont-principal">
+        <div id="app-container">
+            <div class="container-header">
+                <nav class="navigation-bar">
+                    <div class="leading">
+                        <button class="account-button">Cuenta</button>
+                    </div>
+                    <h1 class="title">Tiendas</h1>
+                    <div class="trailing">
+                        <button class="cart-button">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </nav>
+                <span class="large-title">Tiendas</span>
+                <header class="header">
+                    <div class="cart-address">
+                        <button class="button-flex">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="text">
+                                <span>Cercana a</span>
+                                <span class="list-address">Santa Fe, Bogotá, CO</span>
+                            </div>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                    </div>
+                    <div class="searchbar">
+                        <div class="search-container">
+                            <label for="search-field" class="search-icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </label>
+                            <div class="search-input">
+                                <input id="search-field" name="search-field" class="search-field" type="search" placeholder="Buscar tiendas y productos" autocomplete="off" spellcheck="false" tabindex="-1" value="">
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <main class="stores-container">
+                <div class="stares-collections">
+                    <!--Primera seccion-->
+                    <section class="stores-row-container">
+                        <section>
+                            <div class="slider-scroll">
+                                <figure class="slider">
+                                    <div class="stores-group">
+                                        
+                                        <% for(const store of stores){ %>
+                                            <a href="/tiendas/<%= store.id %>">
+                                                <figure class="stores-classic-card" style="background-color: <%= store.color %>;">
+                                                    <div class="content">
+                                                        <div class="logo">
+                                                            <img src="<%= store.logo %>" alt="<%= store.name %>" style="max-height: 100px;" loading="auto">
+                                                        </div>
+                                                        <div class="stores-label-container">
+                                                            <p class="store-label"><%= store.deliveryTime %></p>
+                                                        </div>
+                                                    </div>
+                                                </figure>
+                                            </a>
+                                        <% } %>
+
+                                    </div>
+                                </figure>
+                            </div>
+                        </section>
+                    </section>
+                    <div class="divider"></div>
+                    <!--Seccion express-->
+                    <section class="stores-row-container">
+                        <h2>
+                            <span>Express</span>
+                        </h2>
+                        <section>
+                            <div class="slider-scroll">
+                                <figure class="slider">
+                                    <a href="/HTML/tienda-spid.html">
+                                        <div>
+                                            <img class="img-fluid" src="https://images.rappi.com.ar/marketplace/store_type_1638212925712.png?d=200x200&amp;e=webp" width="70" height="70" alt="">
+                                            <div>
+                                                <h4>SPID</h4>
+                                                <p>Express y conveniencia</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </figure>
+                                <figure class="slider">
+                                    <a href="/HTML/tienda-farmatodo.html">
+                                        <div>
+                                            <img class="img-fluid" src="https://apprecs.org/ios/images/app-icons/256/77/766541175.jpg" width="70" height="70" alt="">
+                                            <h4>Farmatodo</h4>
+                                            <p>Salud y cuidado personal</p>
+                                        </div>
+                                    </a>
+                                </figure>
+                                <figure class="slider">
+                                    <a href="/HTML/tienda-locatel.html">
+                                        <div>
+                                            <img class="img-fluid" src="https://images.rappi.com/marketplace/store_type_1631205584841.jpg?d=200x200&amp;e=webp" width="70" height="70" alt="">
+                                            <h4>Locatel</h4>
+                                            <p>Salud y bienestar</p>
+                                        </div>
+                                    </a>
+                                </figure>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/dd5e87f640.js" crossorigin="anonymous"></script>
+</body>
+</html>
