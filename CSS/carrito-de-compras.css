@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+} 
+
+.header .btn {
+    padding: 0.5rem;
+    margin: 1rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    background-color: rgb(238, 43, 43);
+}
+
+.header .cont-title {
+    display: flex;
+}
+
+.header .cont-title h1 {
+    width: 70%;
+    text-align: center;
+    padding: 1rem 0;
+    color: #313131;
+}
+
+
+.header .cart-address .button-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    color: rgb(97, 96, 96);
+    font-size: 1em;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+.producto-carrito {
+    padding: 2rem 0;
+}
+
+main .cont-header {
+    border: 1px solid rgb(175, 174, 174);
+    display: flex;
+}
+
+main .cont-header div {
+    padding: 0.5rem;
+}
+
+main .cont-info {
+    border: 1px solid rgb(175, 174, 174);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .cont-info .btn-negro {
+    background-color: #313131;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+main .cont-info .btn-rojo {
+    background-color: rgb(238, 43, 43);
+    padding: 0.5rem;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+main .cont-entrega {
+    border: 1px solid rgb(175, 174, 174);
+    display: flex;
+}
+
+main .cont-entrega div {
+    padding: 0.5rem;
+}
+
+.cont-btn-continuar .btn-continuar {
+    display: block;
+    margin: auto;
+    background-color: rgb(238, 43, 43);
+    padding: 1rem;
+    width: 30%;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+}

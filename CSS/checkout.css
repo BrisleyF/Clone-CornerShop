@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+} 
+
+header .cont-img .logo {
+    display: block;
+    margin: auto;
+}
+
+main .confirmacion {
+    border: 1px solid rgb(185, 184, 184);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+main .confirmacion a {
+    text-decoration: none;
+    color: rgb(78, 76, 76);
+    font-size: 1.5rem;
+}
+
+main .confirmacion a:hover {
+    color: gray;
+}
+
+main .confirmacion a button {
+    background-color: rgb(238, 43, 43);
+    padding: 0.5rem;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+main .datos {
+    padding: 2rem 1rem;
+    border: 1px solid rgb(185, 184, 184);
+}
+
+main .datos label h4 {
+    margin-bottom: 1rem;
+}
+
+main .datos input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+main .shopper {
+    padding: 1rem 0.5rem;
+    border: 1px solid rgb(185, 184, 184);
+    color: rgb(238, 43, 43);
+}
+
+main .propina {
+    padding: 1rem 0.5rem;
+    border: 1px solid rgb(185, 184, 184);
+    text-align: center;
+}
+
+main .propina label {
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
+}
+
+main .resumen h2 {
+    color: rgb(238, 43, 43);
+}
+
+main .total {
+    padding: 1rem 0.5rem;
+    border: 1px solid rgb(185, 184, 184);
+    text-align: center;
+} 
+
+main .total h3 {
+    padding: 0.5rem;
+}
+
+main .total .rojo {
+    color: rgb(238, 43, 43);
+}
+
+main .total .total-btn button {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(238, 43, 43);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+}
