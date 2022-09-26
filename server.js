@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express(); 
 const path = require('path');
+const initDb = require('./libs/db-connetion');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -176,3 +177,5 @@ const PUERTO = process.env.PORT || 3000;
 app.listen(PUERTO, () => {
 	console.log(`El servidor esta escuchando en el puerto ${PUERTO}...`);
 })
+
+initDb();
