@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bananas</title>
+    <title><%= producto %></title>
     <link rel="stylesheet" href="/CSS/producto-banana.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <a href="/HTML/listado-tiendas.html">
+            <a href="/tiendas/<%= storeId %>">
                 <button>Volver a la tienda</button>
             </a>
         </div>
+
+        
         <div class="cont-img">
-            <img class="product-img" src="https://s.cornershopapp.com/product-images/1111602.jpe?versionId=CqCXpLFuPgpp1s9pXKwwrWIXCaNXr5yS" alt="Banano urabá" aria-hidden="true" data-displace-into-id="target-image-id" style="visibility: visible;">
-            <h2>Bananas</h2>
-        </div>
+            <img class="product-img" src="<%= producto.image %>" alt="<%= producto.name %>" aria-hidden="true" data-displace-into-id="target-image-id" style="visibility: visible;">
+            <h2><%= producto.name %></h2>
+        </div> 
         <div class="cont-info">
             <section class="info">
                 <table>
@@ -25,15 +27,15 @@
                     <tbody>
                         <tr>
                             <th scope="row"><span>Precio</span></th>
-                            <td itemprop="price"><span class="price"><span>1 $</span></td>
+                            <td itemprop="price"><span class="price"><span><%= producto.price %></span></td>
                         </tr>
                         <tr>
-                            <th scope="row">Precio por kilogramo</th>
-                            <td><span>2 $</span></td>
+                            <th scope="row"><%= producto.unitDescription %></th>
+                            <td><span><%= producto.price %></span></td>
                         </tr>
                         <tr>
                             <th scope="row"><span>Formato</span></th>
-                            <td>Unidad: 500 g aprox</td>
+                            <td><%= producto.unit %></td>
                         </tr>
                     </tbody>
                 </table>
