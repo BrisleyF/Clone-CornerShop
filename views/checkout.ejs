@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkoup | cornershop</title>
+    <link rel="icon" href="https://apprecs.org/ios/images/app-icons/256/a3/995060131.jpg">
+    <link rel="stylesheet" href="/CSS/checkout.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="cont-img">
+                <img class="logo" src="https://lever-client-logos.s3.us-west-2.amazonaws.com/1c86bfb3-cab0-4255-99bf-24c5488d888a-1632765661247.png" width="350" height="200" alt="">
+            </div>
+        </header>
+        <main>
+
+            <form action="" id="formulario">
+                <div>
+                    <div class="confirmacion">
+                        <div>
+                            <a href="/carrito">
+                                <button>Volver al carrito</button>
+                            </a>
+                        </div>
+                        <div>
+                            <h2>Confirmacion</h2>
+                        </div>
+                        <div>
+                            <a href="/tiendas">
+                                <i class="fa-regular fa-x"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="datos" id="datos">
+                        <div id="grupo-nombre">
+                            <label for="">
+                                <h4>NOMBRE*</h4>
+                            </label>
+                            <input type="text" id="grupo__nombre" name="nombre" placeholder="Jose (nombre regular)">
+                            <p class="formulario__input-error">El nombre puede llevar letras, espacios y acentos.</p>
+                        </div>
+                        <div id="grupo-apellido">
+                            <label for="">
+                                <h4>APELLIDO*</h4>
+                            </label>
+                            <input type="text" id="grupo__apellido" name="apellido" placeholder="Alvares (apellido regular)">
+                            <p class="formulario__input-error">El apellido puede llevar letras, espacios y acentos.</p>
+                        </div>
+                        <div id="grupo-direccion">
+                            <label for="">
+                                <h4>DIRECCION*</h4>
+                            </label>
+                            <input type="text" id="grupo__direccion" name="direccion" placeholder="Maturin / Venezuela">
+                            <p class="formulario__input-error">La direccion puede llevar letras, espacios y acentos.</p>
+                        </div>
+                        <div id="grupo-nota">
+                            <label for="">
+                                <h4>NOTA*</h4>
+                            </label>
+                            <input type="text" id="grupo__nota" name="nota" placeholder="Esquina / paralela / color">
+                            <p class="formulario__input-error">La nota puede llevar letras, espacios y acentos.</p>
+                        </div>
+                        <div id="grupo-email">
+                            <label for="">
+                                <h4>EMAIL*</h4>
+                            </label>
+                            <input type="text" id="grupo__email" name="email" placeholder="jose@gmail.com">
+                            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                        </div>
+                        <div id="grupo-telefono">
+                            <label for="">
+                                <h4>TELEFONO*</h4>
+                            </label>
+                            <input type="text" id="grupo__telefono" name="telefono" placeholder=+58911...>
+                            <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+                        </div>
+                    </div>
+
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                    </div>
+
+                    <div class="shopper">
+                        <h2>Propina del Shopper</h2>
+                    </div>
+                    <div class="propina">
+                        <input type="radio">
+                        <label for="">0 $</label>
+                        <input type="radio">
+                        <label for="">2.5 $</label>
+                        <input type="radio">
+                        <label for="">5 $</label>
+                    </div>
+                    <div class="resumen">
+                        <h2>Resumen del pedido</h2>
+                    </div>
+                    <div class="total">
+                        <div class="total-info">
+                            <h3>Tomates 1.5 $</h3>
+                            <h3>Subtotal: 1.5 $</h3>
+                            <h3 class="rojo">Total: 1.5 $</h3>
+                        </div>
+                        <div class="total-btn">
+                        
+                            <button type="submit">Crear orden</button>
+                            
+                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">La orden se envio correctamente</p>
+                        </div> 
+                    </div>
+                </div>
+            </form>
+            
+        </main>
+    </div>
+    <script src="https://kit.fontawesome.com/dd5e87f640.js" crossorigin="anonymous"></script>
+    <script src="/checkout.js"></script>
+</body>
+</html>
