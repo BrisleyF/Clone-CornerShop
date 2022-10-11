@@ -50,9 +50,9 @@
                     <h2>Frutas y verduras</h2>
                 </div>
                 <div class="contenido">
-                    <% for(const item of products) { %>
+                    <% for(const item of stores) { %>
                     <div class="producto">
-                        <a href="/tiendas/<%= id %>/<%= item.id %>"> 
+                        <a href="/tiendas/<%= name %>/<%= item._id %>"> 
                             <div class="producto-imagen">
                                 <img src="<%= item.image %>" alt="<%= item.name %>" width="100" height="100">
                             </div>

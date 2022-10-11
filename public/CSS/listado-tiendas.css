@@ -105,13 +105,14 @@ body {
     padding: 1rem 0;
 }
 
-.stores-container .stores-row-container .slider-1 {
-}
-
 .stores-container .stores-row-container .stores-group {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 12px;
+}
+
+.stores-container .stores-row-container .stores-group a {
+    text-decoration: none;
 }
 
 .stores-container .stores-row-container h2, h4, p {

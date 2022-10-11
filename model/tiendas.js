@@ -7,4 +7,5 @@ const tiendasSchema = new mongoose.Schema({
     color: String
 });
 
-module.exports = mongoose.model('tiendas', tiendasSchema); 
+const tiendas = mongoose.model('tiendas', tiendasSchema); 
+module.exports = tiendas;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= producto %></title>
+    <title><%= storeId %></title>
     <link rel="stylesheet" href="/CSS/producto-banana.css">
 </head>
 <body>
@@ -15,11 +15,10 @@
             </a>
         </div>
 
-        
+        <% for(const detalle of detalles) { %>
         <div class="cont-img">
-            <img class="product-img" src="<%= producto.image %>" alt="<%= producto.name %>" aria-hidden="true" data-displace-into-id="target-image-id" style="visibility: visible;">
-            <h2><%= producto.name %></h2>
-        </div> 
+            <img class="product-img" src="<%= detalle.image %>" alt="<%= detalle.name %>" aria-hidden="true" data-displace-into-id="target-image-id" style="visibility: visible;">
+            <h2><%= detalle.name %></h2>
         <div class="cont-info">
             <section class="info">
                 <table>
@@ -27,22 +26,28 @@
                     <tbody>
                         <tr>
                             <th scope="row"><span>Precio</span></th>
-                            <td itemprop="price"><span class="price"><span><%= producto.price %></span></td>
+                            <td itemprop="price"><span class="price"><span><%= detalle.price %></span></td>
                         </tr>
                         <tr>
-                            <th scope="row"><%= producto.unitDescription %></th>
-                            <td><span><%= producto.price %></span></td>
+                            <th scope="row"><%= detalle.unitDescription %></th>
+                            <td><span><%= detalle.price %></span></td>
                         </tr>
                         <tr>
                             <th scope="row"><span>Formato</span></th>
-                            <td><%= producto.unit %></td>
+                            <td><%= detalle.unit %></td>
                         </tr>
                     </tbody>
                 </table>
             </section>
             <hr>
-            <button>Agregar al carrito</button>
+            <a href="/carrito/agregar/<%= productId %>">
+                <button id="agregarCarrito" class="agregarCarrito" onclick="addproduct('<%= productId %>')">Agregar al carrito</button>
+            </a>
+            
         </div>
+        <% } %>
     </div>
+
+    <script src="../public/funcionalidad-btn-carrito.js"></script>
 </body>
 </html>
