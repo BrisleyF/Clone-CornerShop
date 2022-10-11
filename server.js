@@ -2,6 +2,11 @@ const express = require('express');
 const app = express(); 
 const path = require('path');
 const initDb = require('./libs/db-connetion');
+const tiendas = require('./model/tiendas');
+const productos = require('./model/productos');
+const productoCarrito = require('./model/productoCarrito');
+const carritoDeCompras = require('./model/carritoDeCompras');
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -15,161 +20,110 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/tiendas', (req, res) => {
-    const stores = [
-        {
-            id: 'jumbo',
-            name: 'Jumbo',
-            logo: 'https://s.cornershopapp.com/store-logo/light_img_file_logo_92ec419e-bc43-413d-a4e4-c0707565dda6.png?versionId=TrYFX.n71wxRD.OfqoV4wkyKxtFSc7h2',
-            deliveryTime: 'En 90 minutos',
-            color: 'rgb(7, 147, 62)',
-        },
-        {
-            id: 'spid',
-            name: 'Spid',
-            logo: 'https://s.cornershopapp.com/store-logo/light_img_file_logo_06ed71f9-2789-4ca4-ad86-62f1550c5133.png?versionId=2_pwaBWDd0OhqfozizUnHe57Rkff9Vqf',
-            deliveryTime: 'En 90 minutos',
-            color: 'rgb(232, 48, 138)',
-        },
-        {
-            id: 'alkosto',
-            name: 'SUPER Alkosto',
-            logo: 'https://s.cornershopapp.com/store-logo/logo.png?versionId=iIhpgk1J6JR5NpwPOQfyUc1ajYWZeBfx',
-            deliveryTime: 'En 90 minutos',
-            color: 'rgb(240, 92, 36)',
-        }
-    ]
+app.get('/tiendas', async (req, res) => {
 
-	res.render('listado-tiendas', { stores });
+    let stores =  await tiendas.find({});
+    
+    console.log('stores:', stores);
+    res.render('listado-tiendas', { stores });
+
 });
 
-app.get('/tiendas/:name', (req, res) => {
+app.get('/tiendas/:name', async (req, res) => {
     const name = req.params.name;
 
-    let store = {
-        id: 'jumbo',
-        name: 'Jumbo',
-        products: [
-            {
-                id: 'bananas',
-                name: 'Bananas',
-                image: 'https://s.cornershopapp.com/product-images/1111602.jpe?versionId=CqCXpLFuPgpp1s9pXKwwrWIXCaNXr5yS',
-                price: '1$',
-                unitDescription: 'Precio por kg',
-                unit: 'Unidad: 500gr aprox',
-            },
-            {
-                id: 'tomate',
-                name: 'Jumbo - Tomate chonto',
-                image: 'https://s.cornershopapp.com/product-images/1111674.jpg?versionId=3EZvnU4z5YvQlwYEi.pL2HlE8zH4lygy',
-                price: '1.5$',
-                unitDescription: 'Precio por kg',
-                unit: 'Unidad: 300gr aprox',
-            },
-            {
-                id: 'cebolla',
-                name: 'Cebolla cabezona',
-                image: 'https://s.cornershopapp.com/product-images/1111787.jpg?versionId=N.zb97lxOQZJ5OtMM9ECVSpmFBcBtHoG',
-                price: '1.8$',
-                unitDescription: 'Precio por kg',
-                unit: 'Unidad: 240gr aprox',
-            },
-        ],
-    };
-    
-    if (name === 'spid') {
-        store = {
-            id: 'spid',
-            name: 'Spid',
-            products: [
-                {
-                    id: 'vainilla',
-                    name: 'Levapan - Esencia sabor a vainilla caramelo',
-                    price: '3$',
-                    image: 'https://s.cornershopapp.com/product-images/6198689.jpg?versionId=VZ9lVBCHLaXYJgA3GP00_QA3w0RZu7vz',
-                    unit: 'Botella 60 ml',
-                },
-                {
-                    id: 'nescafe',
-                    name: 'Nescafe - Cafe descafeinado',
-                    image: 'https://s.cornershopapp.com/product-images/1061964.jpg?versionId=Tm3NHkQQQEPye8.wYGei1DR9ObBZQEGB',
-                    price: '6$',
-                    unit: 'Frasco de 100 g',
-                },
-                {
-                    id: 'maruchan',
-                    name: 'Maruchan - Sopa de res',
-                    image: 'https://s.cornershopapp.com/product-images/1060734.jpg?versionId=.rjLlOi_0aIjhRjIDZ9GMcTU.0I.JKWT',
-                    price: '2$',
-                    unit: 'Carton de 64 g',
-                },
-            ],
-        };
+    let valor = name;
+
+    if (valor==="Jumbo") {
+        stores = await productos.find({"storeId": "633227bdd20195cb5bfd2832"});
+    } else if(valor==="Spid") {
+        stores = await productos.find({"storeId": "633227bdd20195cb5bfd2833"});
+    }else if(valor === "SUPER alkosto") {
+        stores = await productos.find({"storeId": "633227bdd20195cb5bfd2834"});
     }
 
-    if (name === 'alkosto') {
-        store = {
-            id: 'alkosto',
-            name: 'SUPER Alkosto',
-            products: [
-                {
-                    id: 'producto-1',
-                    name: 'Alkosto producto 1',
-                    price: '3$',
-                    image: 'https://s.cornershopapp.com/product-images/6198689.jpg?versionId=VZ9lVBCHLaXYJgA3GP00_QA3w0RZu7vz',
-                    unit: 'Botella 60 ml',
-                },
-            ],
-        };
-    }
+/*  switch (valor){
+        case "Jumbo":
+            stores = await productos.find({"storeId": "633227bdd20195cb5bfd2832"});
+            break
+        case "Spid":
+            stores = await productos.find({"storeId": "633227bdd20195cb5bfd2833"});
+            break
+        case "SUPER alkosto": 
+            stores = await productos.find({"storeId": "633227bdd20195cb5bfd2834"});
+            break
+        default:
+            stores = await productos.find({});
+            break
+    } */
 
-	res.render('tienda', store);
+    console.log(stores);
+	res.render('tienda', { stores , name });
 });
 
-app.get('/tiendas/:store/:product', (req, res) => {
+app.get('/tiendas/:store/:product', async (req, res) => {
     const storeId = req.params.store;
     const productId = req.params.product;
 
-    let producto = {
-        name: 'Bananas',
-        image: 'https://s.cornershopapp.com/product-images/1111602.jpe?versionId=CqCXpLFuPgpp1s9pXKwwrWIXCaNXr5yS',
-        price: '1$',
-        unitDescription: 'Precio por kg',
-        unit: 'Unidad: 500gr aprox',
-    }
-
-    if (productId === 'vainilla') {
-        producto = {
-            name: 'Vainilla',
-            image: 'https://s.cornershopapp.com/product-images/6198689.jpg?versionId=VZ9lVBCHLaXYJgA3GP00_QA3w0RZu7vz',
-            price: '3$',
-            unitDescription: 'Precio por ml',
-            unit: 'Botella 60 ml',
-        }
-    }
+    let valor = productId;
     
-    if (productId === 'nescafe') {
-        producto = {
-            name: 'Nescafe',
-            image: 'https://s.cornershopapp.com/product-images/1061964.jpg?versionId=Tm3NHkQQQEPye8.wYGei1DR9ObBZQEGB',
-            price: '6$',
-            unitDescription: 'Precio por kg',
-            unit: 'Frasco de 100 g',
-        }
-    }
+    if (valor === "6335accb7c6ac72334192fbb") {
+        detalles = await productos.find({"_id": "6335accb7c6ac72334192fbb"});
+        console.log('detalles:', detalles);
+    } else if (valor === "6335accb7c6ac72334192fbc") {
+        detalles = await productos.find({"_id": "6335accb7c6ac72334192fbc"});
+        console.log('detalles:', detalles);
+    } else if (valor === "6335accb7c6ac72334192fbd") {
+        detalles = await productos.find({"_id": "6335accb7c6ac72334192fbd"});
+        console.log('detalles:', detalles);
+    } else if (valor === "6335accb7c6ac72334192fbe") {
+        detalles = await productos.find({"_id": "6335accb7c6ac72334192fbe"});
+        console.log('detalles:', detalles);
+    } else if (valor === "6335accb7c6ac72334192fbf") {
+        detalles = await productos.find({"_id": "6335accb7c6ac72334192fbf"});
+        console.log('detalles:', detalles);
+    } else if (valor === "6335accb7c6ac72334192fc0") {
+        detalles = await productos.find({"_id": "6335accb7c6ac72334192fc0"});
+        console.log('detallse:', detalles);
+    } else if (valor === "6335accb7c6ac72334192fc1") {
+        detalles = await productos.find({"_id": "6335accb7c6ac72334192fc1"});
+        console.log('detalles:', detalles);
+    } 
 
-    if (productId === 'maruchan') {
-        producto = {
-            name: 'Marucgan - sopa de res',
-            image: 'https://s.cornershopapp.com/product-images/1060734.jpg?versionId=.rjLlOi_0aIjhRjIDZ9GMcTU.0I.JKWT',
-            price: '2$',
-            unitDescription: 'Precio por kg',
-            unit: 'Carton de 64 g',
-        }
-    }
-
-	res.render('producto', { producto, storeId });
+	res.render('producto', { detalles, storeId, productId });
 });
+
+app.get('/carrito/agregar/:id', async (req, res) => {
+    const id = req.params.id;
+
+    let product = await productos.findOne({ _id: id });
+    // agregar al carrito
+    const productCarrito = new productoCarrito({
+        name: product.name,
+        image: product.image,
+        inCart: false,
+        price: product.price,
+        amount: 1,
+    });
+    await productCarrito.save();
+
+    res.redirect('/carrito');
+});
+
+app.get('/carrito', async (req, res) => {
+    const cartProducts = await productoCarrito.find({});
+    
+    res.render('carrito-de-compras', { products: cartProducts }); 
+});
+
+app.get('/checkout', async(req, res) => {
+
+    
+	res.render('checkout', {});
+});
+
+
+
 
 
 const PUERTO = process.env.PORT || 3000;
@@ -179,3 +133,6 @@ app.listen(PUERTO, () => {
 })
 
 initDb();
+
+
+
