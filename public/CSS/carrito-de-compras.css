@@ -7,6 +7,7 @@
 .container {
     width: 90%;
     margin: auto;
+    padding-bottom: 2rem;
 } 
 
 .header .btn {
@@ -43,7 +44,7 @@
 }
 
 main {
-    padding: 2rem 0;
+    padding-top: 2rem;
 }
 
 .producto-carrito {
@@ -61,9 +62,10 @@ main .cont-header div {
 
 main .cont-info {
     border: 1px solid rgb(175, 174, 174);
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
+    text-align: center;
 }
 
 main .cont-info .btn-negro {
@@ -89,6 +91,10 @@ main .cont-entrega {
 
 main .cont-entrega div {
     padding: 0.5rem;
+}
+
+.cont-btn-continuar a {
+    text-decoration: none;
 }
 
 .cont-btn-continuar .btn-continuar {

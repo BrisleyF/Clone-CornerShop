@@ -108,12 +108,17 @@ main .total {
     text-align: center;
 } 
 
-main .total h3 {
+main .total .total-info h3{
+    width: 30%;
+    margin: 0 auto;
+    text-align: justify;
     padding: 0.5rem;
 }
 
 main .total .rojo {
     color: rgb(238, 43, 43);
+    text-align: center;
+    padding: 1rem 0;
 }
 
 main .total .total-btn button {
@@ -145,12 +150,23 @@ main .total .total-btn button {
 .formulario__mensaje-exito {
     padding: 1rem 0;
     margin: 1rem 0;
-    color: rgb(255, 253, 253);
-    background-color: rgb(41, 121, 41);
+    font-weight: bold;
     border-radius: 8px;
+    border: 3px solid rgb(41, 121, 41);
     display: none;
 }
 
 .formulario__mensaje-exito-activo {
     display: block;
+}
+
+.formulario__mensaje-exito-activo button {
+    width: 20%;
+    background-color:rgb(238, 43, 43);
+    color: rgb(196, 192, 192);
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
 }
