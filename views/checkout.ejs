@@ -22,7 +22,7 @@
                     <div class="confirmacion">
                         <div>
                             <a href="/carrito">
-                                <button>Volver al carrito</button>
+                                <button type="button">Volver al carrito</button>
                             </a>
                         </div>
                         <div>
@@ -99,16 +99,20 @@
                     </div>
                     <div class="total">
                         <div class="total-info">
-                            <h3>Tomates 1.5 $</h3>
-                            <h3>Subtotal: 1.5 $</h3>
-                            <h3 class="rojo">Total: 1.5 $</h3>
+                            <% for(const product of cartProducts) { %>
+                            <h3><%= product.name %> : <%= product.price %> $</h3>
+                            <% } %>
                         </div>
+                        <h3 class="rojo">Total: <%= preciototal %> $</h3>
                         <div class="total-btn">
-                        
-                            <button type="submit">Crear orden</button>
-                            
-                            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">La orden se envio correctamente</p>
+                                <button type="submit">Crear orden</button>
                         </div> 
+                        <div class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+                            <p>La orden se envio correctamente</p>
+                            <a href="/orden">
+                                <button class="vista-orden" type="button">Ir a orden</button>
+                            </a>    
+                        </div>
                     </div>
                 </div>
             </form>
