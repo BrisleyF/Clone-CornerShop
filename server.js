@@ -5,8 +5,17 @@ const initDb = require('./libs/db-connetion');
 const tiendas = require('./model/tiendas');
 const productos = require('./model/productos');
 const productoCarrito = require('./model/productoCarrito');
-const carritoDeCompras = require('./model/carritoDeCompras');
+const orden = require('./model/orden');
+const ordenDatos = require('./model/ordenDatos');
+const axios = require('axios');
+var bodyParser = require('body-parser');
+const { abort } = require('process');
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -96,7 +105,8 @@ app.get('/tiendas/:store/:product', async (req, res) => {
 app.get('/carrito/agregar/:id', async (req, res) => {
     const id = req.params.id;
 
-    let product = await productos.findOne({ _id: id });
+    let product = await productos.findOne({ _id: id }); 
+
     // agregar al carrito
     const productCarrito = new productoCarrito({
         name: product.name,
@@ -104,26 +114,85 @@ app.get('/carrito/agregar/:id', async (req, res) => {
         inCart: false,
         price: product.price,
         amount: 1,
-    });
-    await productCarrito.save();
+        product_id: product.product_id
+    }); 
 
-    res.redirect('/carrito');
+    await productCarrito.save();
+    
+    res.redirect('/carrito' );
+    
 });
 
 app.get('/carrito', async (req, res) => {
-    const cartProducts = await productoCarrito.find({});
+
+    const cartProducts = await productoCarrito.find({}); 
+    
     
     res.render('carrito-de-compras', { products: cartProducts }); 
+
 });
+
+app.get('/delete/:id', async (req, res) => {
+    const id = req.params.id;
+
+    await productoCarrito.findByIdAndDelete({ _id: id });
+
+    res.redirect('/carrito' );
+
+});
+
 
 app.get('/checkout', async(req, res) => {
 
+    const cartProducts = await productoCarrito.find({}); 
+    let preciototal = 0
     
-	res.render('checkout', {});
+    for (let i= 0; i < cartProducts.length; i++){
+        preciototal = preciototal + cartProducts[i].price;
+        console.log(i, "precio:", cartProducts[i].price)
+    }
+
+    console.log("preciototal: ", preciototal)
+	res.render('checkout', {cartProducts, preciototal});
+});
+
+app.get('/orden/:id', async(req, res) => {
+    const id = req.params.id;
+
+    const ordenes = await ordenDatos.findOne({ _id: id });
+
+    res.render('orden', {ordenes});
 });
 
 
+app.post('/orden', async (req, res) => {
+    console.log('req.body', req.body)
+    let body = req.body;
 
+
+    const cartProducts = await productoCarrito.find({}); 
+    let preciototal = 0
+    
+    for (let i= 0; i < cartProducts.length; i++){
+        preciototal = preciototal + cartProducts[i].price;
+    }
+
+    const datos = new ordenDatos({
+        cliente: body.cliente,
+        direccion: body.direccion,
+        nota: body.nota,
+        telefono: body.telefono,
+        preciototal: preciototal,
+        cartProducts: cartProducts,
+        date: Date(),
+        metodoDePago: "pagoMovil"
+    }); 
+
+    const order = await datos.save();
+
+
+    res.json(order)
+});
 
 
 const PUERTO = process.env.PORT || 3000;
