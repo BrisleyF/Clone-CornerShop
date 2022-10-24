@@ -48,34 +48,34 @@
                 <div>
                     <h4>NUMERO DE ORDEN: |</h4>
                     <small>
-                        <strong>blabla</strong>
+                        <strong><%= ordenes._id %></strong>
                     </small>
                 </div>
                 <div>
                     <h4>DATE: |</h4>
                     <small>
-                        <strong>blabla</strong>
+                        <strong><%= ordenes.date %></strong>
                     </small>
                 </div>
                 <div>
                     <h4>TOTAL: |</h4>
                     <small>
-                        <strong>blabla</strong>
+                        <strong><%= ordenes.preciototal %> $</strong>
                     </small>
                 </div>
                 <div>
                     <h4>METODO DE PAGO: |</h4>
                     <small>
-                        <strong>blabla</strong>
+                        <strong><%= ordenes.metodoDePago %></strong>
                     </small>
                 </div>
             </div>
             <div class="cont-info">
                 <ul>
-                    <li>blabla</li>
-                    <li>blabla</li>
-                    <li>blabla</li>
-                    <li>blabla</li>
+                    <li><%= ordenes.cliente%></li>
+                    <li><%= ordenes.direccion %></li>
+                    <li><%= ordenes.nota%></li>
+                    <li><%= ordenes.telefono %></li>
                 </ul>
             </div>
         </main>
