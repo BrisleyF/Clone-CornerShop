@@ -1,5 +1,11 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+const inputName = document.querySelector('#grupo__nombre');
+const inputApellido = document.querySelector('#grupo__apellido');
+const inputDireccion = document.querySelector('#grupo__direccion');
+const inputNota = document.querySelector('#grupo__nota');
+const inputEmail = document.querySelector('#grupo__email');
+const inputTelefono = document.querySelector('#grupo__telefono');
 
 const expresiones = {
 	
@@ -70,7 +76,17 @@ formulario.addEventListener('submit', (e) => {
 
     
 	if(campos.nombre && campos.apellido && campos.direccion && campos.nota && campos.email && campos.telefono){
-		formulario.reset();
+		
+
+        let cliente = inputName.value;
+        let direccion = inputDireccion.value;
+        let nota = inputNota.value;
+        let telefono = inputTelefono.value;
+        let propina = document.querySelector('#propina input[type=radio]:checked');
+
+        datosDelFormulario(cliente, direccion, nota, telefono, propina);
+
+        formulario.reset();
 
         document.getElementById(`grupo__nombre`).classList.remove('colorGreen');
         document.getElementById(`grupo__apellido`).classList.remove('colorGreen');
@@ -82,12 +98,32 @@ formulario.addEventListener('submit', (e) => {
 		/* setTimeout(() => {
 			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
 		}, 10000); */
+        
+
+        
 
 	} else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
         setTimeout(() => {
 			document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		}, 5000);
-
 	}
 });
+
+
+let datosDelFormulario = async (cliente, direccion, nota, telefono) => {
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/orden',
+        responseType: 'json', 
+        data: {
+            'cliente': cliente,
+            'direccion': direccion,
+            'nota': nota,
+            'telefono': telefono
+        }
+    }).then(({data: {_id}}) => {
+        document.getElementById("order-link").href= "/orden/" + _id;        
+    });
+};
+
